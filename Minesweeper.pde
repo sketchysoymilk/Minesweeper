@@ -1,15 +1,14 @@
 import de.bezier.guido.*;
-private boolean no = false;
 private final static int NUM_ROWS = 20;
 private final static int NUM_COLS = 20;
-private MSButton[][] buttons; //2d array of minesweeper buttons
-private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
+private boolean no = false;
+private MSButton[][] buttons;
+private ArrayList <MSButton> mines = new ArrayList <MSButton>(); 
 
 void setup ()
 {
     size(400, 400);
     textAlign(CENTER,CENTER);
-    // make the manager
     Interactive.make( this );
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for(int r = 0; r < NUM_ROWS; r++){
@@ -107,10 +106,9 @@ public class MSButton
         y = myRow*height;
         myLabel = "";
         flagged = clicked = false;
-        Interactive.add( this ); // register it with the manager
+        Interactive.add( this );
     }
 
-    // called by manager
     public void mousePressed ()
     {
       if(!no){
